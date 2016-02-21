@@ -2,7 +2,7 @@
   "name": "minecraft-classic-server",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,6 +12,7 @@
   "dependencies": {
     "minecraft-classic-anvil": "^1.0.0",
     "minecraft-classic-protocol": "^1.2.0",
+    "requireindex": "^1.1.0",
     "vec3": "^0.1.3"
   },
   "engines": {
