@@ -25,7 +25,8 @@ server.on('login', function(client) {
 
   for(let x=0;x<256;x++)
     for(let z=0;z<256;z++)
-      map.setBlock(new Vec3(x,30,z),3);
+      for(let y=0;y<64;y++)
+      map.setBlock(new Vec3(x,y,z),3);
 
   var compressedMap=zlib.gzipSync(map.dump());
 
@@ -45,9 +46,9 @@ server.on('login', function(client) {
   client.write('spawn_player', {
     player_id: -1,
     player_name: "UserXYZ",
-    x: 3184,
-    y: 1392,
-    z: 5712,
+    x: 2,
+    y: 64 * 32,
+    z: 2,
     yaw: 0,
     pitch: 0
   });
