@@ -5,7 +5,6 @@ const EventEmitter = require('events').EventEmitter;
 const path = require('path');
 const requireIndex = require('requireindex');
 
-
 function createMCServer(options) {
   options = options || {};
   const mcServer = new MCServer();
@@ -25,13 +24,12 @@ class MCServer extends EventEmitter {
     Object.keys(plugins)
       .filter(pluginName => plugins[pluginName].server!=undefined)
       .forEach(pluginName => plugins[pluginName].server(this, options));
-    //if(options.logging == true) this.createLog();
+    
     this._server.on('error', error => this.emit('error',error));
     this._server.on('listening', () => this.emit('listening',this._server.socketServer.address().port));
     this.emit('asap');
   }
 }
-
 
 module.exports = {
   createMCServer:createMCServer

@@ -1,14 +1,18 @@
 {
-  "name": "minecraft-classic-server",
+  "name": "dazed-sheep",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Minecraft Classic server in JavaScript",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "mhsjlw <mhsjlw@aol.com>",
+  "contributors": [{
+    "name": "rom1504",
+    "email": "romain.rom1@gmail.com"
+  }],
+  "license": "MIT",
   "dependencies": {
     "minecraft-classic-anvil": "^1.0.0",
     "minecraft-classic-protocol": "^1.2.0",
