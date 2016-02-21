@@ -59,6 +59,13 @@ server.on('login', function(client) {
     message: 'UserXYZ joined the game'
   });
 
+  client.on('message', function(unused, message) {
+    client.write('message', {
+      player_id: -1,
+      message: unused.message
+    });
+  });
+
 });
 
 server.on('error', function(error) {
