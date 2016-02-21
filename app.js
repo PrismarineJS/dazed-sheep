@@ -1,13 +1,15 @@
-"use strict";
+'use strict';
 
 var mc = require('minecraft-classic-protocol');
 var zlib = require('zlib');
+var mca = require('minecraft-classic-anvil');
+var fs = require('fs');
 
 var options = { port: 25565 };
 var server = mc.createServer(options);
 var players = 0;
 var World = require("./world");
-var Vec3=require("vec3").Vec3;
+var Vec3 = require("vec3").Vec3;
 
 server.on('login', function(client) {
   players++;
@@ -22,11 +24,12 @@ server.on('login', function(client) {
   client.write('level_initialize', {});
 
   var map=new World({x:256,y:64,z:256});
+  map.load(mca.readSync(fs.readFileSync(__dirname + '/level.dat')).blocks.$);
 
-  for(let x=0;x<256;x++)
-    for(let z=0;z<256;z++)
-      for(let y=0;y<128;y++)
-      map.setBlock(new Vec3(x,y,z),3);
+  // for(let x=0;x<256;x++)
+  //   for(let z=0;z<256;z++)
+  //     for(let y=0;y<128;y++)
+  //     map.setBlock(new Vec3(x,y,z),3);
 
   var compressedMap=zlib.gzipSync(map.dump());
 
