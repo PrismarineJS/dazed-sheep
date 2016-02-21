@@ -8,10 +8,9 @@
   },
   "keywords": [],
   "author": "mhsjlw <mhsjlw@aol.com>",
-  "contributors": [{
-    "name": "rom1504",
-    "email": "romain.rom1@gmail.com"
-  }],
+  "contributors": [
+    "rom1504 <romain.rom1@gmail.com>"
+  ],
   "license": "MIT",
   "dependencies": {
     "minecraft-classic-anvil": "^1.0.0",
@@ -21,5 +20,14 @@
   },
   "engines": {
     "node": ">=5"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dazed-sheep/dazed-sheep.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dazed-sheep/dazed-sheep/issues"
+  },
+  "homepage": "https://github.com/dazed-sheep/dazed-sheep#readme"
 }
