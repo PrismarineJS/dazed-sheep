@@ -1,5 +1,10 @@
 {
   "port": 25565,
   "name": "A Minecraft Server",
-  "motd": "Welcome to my Minecraft Server!"
+  "motd": "Welcome to my Minecraft Server!",
+  "disable-op-command": false,
+  "ops": [
+    "mhsjlw",
+    "rom1504"
+  ]
 }
