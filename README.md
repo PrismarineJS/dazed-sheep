@@ -1,5 +1,7 @@
 dazed-sheep
 ===========
+[![NPM version](https://badge.fury.io/js/dazed-sheep.svg)](http://badge.fury.io/js/dazed-sheep)
+[![Build Status](https://img.shields.io/circleci/project/dazed-sheep/dazed-sheep/master.svg)](https://circleci.com/gh/dazed-sheep/dazed-sheep)
 
 A Minecraft Classic server written in JavaScript
 
