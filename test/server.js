@@ -4,6 +4,7 @@ const net = require('net');
 const mc = require('minecraft-classic-protocol');
 
 describe("server", function() {
+  this.timeout(5000);
   let serv;
   let client;
   let loaded = false;
