@@ -2,23 +2,20 @@
 
 const net = require('net');
 const mc = require('minecraft-classic-protocol');
+var os = require("os");
 
 describe("server", function() {
-  this.timeout(10000);
+  this.timeout(5000);
   let serv;
   let client;
   let loaded = false;
   let spawned = false;
 
   before(function(done) {
-    serv = require("../index").createMCServer({
-      port: 25565,
-      name: "A Minecraft Server",
-      motd: "Welcome to my Minecraft Server!"
-    });
+    serv = require("../app");
 
     client = mc.createClient({
-      host: 'localhost',
+      host: os.hostname(),
       port: 25565,
       username: 'echo',
       password: 'ping'
@@ -39,7 +36,7 @@ describe("server", function() {
 
   it("is running", function(done) {
     const client = net.Socket();
-    client.connect(serv._server.socketServer.address().port, '127.0.0.1', done);
+    client.connect(serv._server.socketServer.address().port, os.hostname(), done);
     client.on('error', done);
   });
 
