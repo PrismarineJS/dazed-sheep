@@ -4,7 +4,7 @@
   "description": "A Minecraft Classic server in JavaScript",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --recursive"
   },
   "keywords": [],
   "author": "mhsjlw <mhsjlw@aol.com>",
