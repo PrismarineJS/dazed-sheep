@@ -59,12 +59,20 @@ describe("server", function() {
   });
 
   it("spawned", function(done) {
+    client.on('spawn_player', function() {
+      done();
+    });
+
     if(spawned == true) {
       done(); // this is pretty hacky
     }
   });
 
   it("does get world", function(done) {
+    client.on('level_finalize', function() {
+      done();
+    });
+
     if(loaded == true) {
       done(); // this is pretty hacky
     }
