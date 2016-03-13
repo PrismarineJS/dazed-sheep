@@ -40,7 +40,7 @@ describe("server", function() {
     client.on('error', done);
   });
 
-  if(process.env.CIRCLECI != true) {
+  if(process.env.CIRCLECI != "true") {
     it("can log in", function(done) {
       client.on('connect', function() {
         done();
