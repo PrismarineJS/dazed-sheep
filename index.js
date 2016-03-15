@@ -21,10 +21,11 @@ class MCServer extends EventEmitter {
   connect(options) {
     const plugins = requireIndex(path.join(__dirname, 'lib', 'plugins'));
     this._server = mc.createServer(options);
+
     Object.keys(plugins)
       .filter(pluginName => plugins[pluginName].server!=undefined)
       .forEach(pluginName => plugins[pluginName].server(this, options));
-    
+
     this._server.on('error', error => this.emit('error',error));
     this._server.on('listening', () => this.emit('listening',this._server.socketServer.address().port));
     this.emit('asap');

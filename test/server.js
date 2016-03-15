@@ -1,5 +1,7 @@
 'use strict';
 
+process.env.NODE_ENV = 'test';
+
 const net = require('net');
 const mc = require('minecraft-classic-protocol');
 var os = require("os");
