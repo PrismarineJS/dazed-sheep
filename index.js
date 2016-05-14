@@ -1,6 +1,7 @@
 'use strict';
 
 const mc = require('minecraft-classic-protocol');
+const cpe = require('minecraft-classic-protocol-extension');
 const EventEmitter = require('events').EventEmitter;
 const path = require('path');
 const requireIndex = require('requireindex');
@@ -8,6 +9,7 @@ const requireIndex = require('requireindex');
 function createMCServer(options) {
   options = options || {};
   const mcServer = new MCServer();
+  options.customPackets = cpe.protocol;
   mcServer.connect(options);
   return mcServer;
 }
