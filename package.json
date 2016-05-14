@@ -14,8 +14,8 @@
   "license": "MIT",
   "dependencies": {
     "js-logger": "^1.2.0",
-    "minecraft-classic-anvil": "^1.0.0",
     "minecraft-classic-protocol": "^1.2.5",
+    "minecraft-classic-protocol-extension": "^1.0.0",
     "requireindex": "^1.1.0",
     "vec3": "^0.1.3"
   },
