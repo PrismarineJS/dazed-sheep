@@ -3,3 +3,4 @@ npm-debug.log
 config/settings.json
 world/level.dat
 /plugins/
+oldworld/
