@@ -4,3 +4,4 @@ config/settings.json
 world/level.dat
 /plugins/
 /world/
+.vscode/
