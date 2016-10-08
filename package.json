@@ -1,6 +1,6 @@
 {
   "name": "dazed-sheep",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "A Minecraft Classic server in JavaScript",
   "main": "index.js",
   "scripts": {

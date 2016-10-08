@@ -29,6 +29,7 @@ class MCServer extends EventEmitter {
       .forEach(pluginName => plugins[pluginName].server(this, options));
 
     this._server.on('error', error => this.emit('error',error));
+    this._server.on('clientError', error => this.emit('error', error));
     this._server.on('listening', () => this.emit('listening',this._server.socketServer.address().port));
     this.emit('asap');
   }

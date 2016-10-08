@@ -1,7 +1,7 @@
 History
 =======
 
-## 1.0.0
+## 1.2.0
 Initial release, the following changes were made:
 * [[`24d11b61ce`](https://github.com/dazed-sheep/dazed-sheep/commit/24d11b61ce)] - fix coverage badge (mhsjlw)
 * [[`43ca25d815`](https://github.com/dazed-sheep/dazed-sheep/commit/43ca25d815)] - added doc badge and coveralls (mhsjlw)
