@@ -1,4 +1,4 @@
-dazed-sheep [![Build Status](https://img.shields.io/circleci/project/dazed-sheep/dazed-sheep/master.svg)](https://circleci.com/gh/dazed-sheep/dazed-sheep)
+dazed-sheep [![Build Status](https://img.shields.io/circleci/project/dazed-sheep/dazed-sheep/master.svg)](https://circleci.com/gh/dazed-sheep/dazed-sheep) [![Coverage Status](https://coveralls.io/repos/github/dazed-sheep/dazed-sheep/badge.svg?branch=master)](https://coveralls.io/github/dazed-sheep/dazed-sheep?branch=master)  [![Inline docs](http://inch-ci.org/github/dazed-sheep/dazed-sheep.svg?branch=master)](http://inch-ci.org/github/dazed-sheep/dazed-sheep)
 ===========
 
 A Minecraft Classic server written in JavaScript, includes a featureful JavaScript API, complete with world saving

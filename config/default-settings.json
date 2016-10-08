@@ -3,7 +3,6 @@
   "name": "A Minecraft Server",
   "motd": "Welcome to my Minecraft Server!",
   "max-players": 20,
-  "heartbeat": false,
   "public": false,
   "online-mode": false,
   "disable-op-command": false,

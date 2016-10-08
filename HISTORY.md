@@ -1,5 +1,5 @@
 History
 =======
 
-## 1.1.0
-* first history entry
+## 1.0.0
+* initial release
