@@ -1,5 +1,3 @@
-'use strict';
-
 const mc = require('minecraft-classic-protocol');
 const cpe = require('minecraft-classic-protocol-extension');
 const EventEmitter = require('events').EventEmitter;
@@ -21,7 +19,7 @@ class MCServer extends EventEmitter {
   }
 
   connect(options) {
-    const plugins = requireIndex(path.join(__dirname, 'lib', 'plugins'));
+    const plugins = requireIndex(path.join(__dirname, 'src', 'plugins'));
     this._server = mc.createServer(options);
 
     Object.keys(plugins)

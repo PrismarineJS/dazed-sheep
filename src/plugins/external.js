@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports.server = function(serv, settings) {
   serv.plugins = {};
   serv.pluginCount = 0;

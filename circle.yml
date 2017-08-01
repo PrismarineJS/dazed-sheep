@@ -1,7 +1,3 @@
 machine:
   node:
-    version: 5.8.0
-
-test:
-  post:
-    - NODE_ENV=test istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+    version: 8.2.1

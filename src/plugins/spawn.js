@@ -1,4 +1,3 @@
-'use strict';
 var Vec3 = require('vec3');
 
 module.exports.player = function(player, serv, settings){

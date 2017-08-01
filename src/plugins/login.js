@@ -1,5 +1,3 @@
-'use strict';
-
 const EventEmitter = require('events').EventEmitter;
 const path = require('path');
 const requireIndex = require('requireindex');

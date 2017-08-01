@@ -7,7 +7,7 @@
     "test": "mocha --recursive"
   },
   "keywords": [],
-  "author": "mhsjlw <mhsjlw@aol.com>",
+  "author": "mhsjlw",
   "contributors": [
     "rom1504 <romain.rom1@gmail.com>"
   ],

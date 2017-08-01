@@ -1,5 +1,3 @@
-'use strict';
-
 class Command {
   constructor(params, parent, hash) {
     this.params = params;
