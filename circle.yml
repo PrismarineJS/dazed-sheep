@@ -13,7 +13,7 @@ jobs:
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run: yarn install
-      - run: yarn install eslint jest -g
+      - run: yarn global add jest eslint
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
