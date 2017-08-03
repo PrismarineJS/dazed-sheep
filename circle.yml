@@ -3,7 +3,7 @@ version: 2.0
 defaults: &defaults
   working_directory: ~/dazed-sheep
   docker:
-    - image: node:8.2.1-alpine
+    - image: node:8.2.1
 
 jobs:
   build:
@@ -13,7 +13,6 @@ jobs:
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run: yarn install
-      - run: yarn global add jest eslint
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
