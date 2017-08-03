@@ -5,6 +5,10 @@
   "main": "index.js",
   "keywords": [],
   "author": "mhsjlw",
+  "scripts": {
+    "test": "exit 0",
+    "lint": "eslint --ext=js ."
+  },
   "contributors": [
     "rom1504 <romain.rom1@gmail.com>"
   ],
@@ -31,5 +35,9 @@
   "bugs": {
     "url": "https://github.com/dazed-sheep/dazed-sheep/issues"
   },
-  "homepage": "https://github.com/dazed-sheep/dazed-sheep#readme"
+  "homepage": "https://github.com/dazed-sheep/dazed-sheep#readme",
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.3.0"
+  }
 }

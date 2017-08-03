@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var mcServer = require("./");
+var mcServer = require('./');
 var settings;
 
 try {

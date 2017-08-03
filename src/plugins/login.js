@@ -55,7 +55,7 @@ module.exports.server = function(serv, options) {
       .filter(pluginName => plugins[pluginName].player != undefined)
       .forEach(pluginName => plugins[pluginName].player(player, serv, options));
 
-    serv.emit("newPlayer", player);
+    serv.emit('newPlayer', player);
     player.emit('asap');
     player.login();
   });

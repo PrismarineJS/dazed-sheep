@@ -131,7 +131,7 @@ module.exports.player = function(player, serv) {
     usage: '/save',
     op: true,
     action() {
-      player.chat('Saving...')
+      player.chat('Saving...');
       serv.world.save(function(err) {
         if(!err) {
           player.chat('Saved the world');
@@ -146,7 +146,7 @@ module.exports.player = function(player, serv) {
     base: 'tp',
     info: 'teleport a player to another player',
     usage: '/tp <player>',
-   op: true,
+    op: true,
     action(username) {
       const user = serv.getPlayer(username.toString().split(' ')[0].trim());
 
@@ -162,7 +162,7 @@ module.exports.player = function(player, serv) {
     base: 'kick',
     info: 'kick a player from the server',
     usage: '/kick <player> [reason]',
-   op: true,
+    op: true,
     action(params) {
       const user = serv.getPlayer(params.toString().split(' ')[0].trim());
       if(params.toString().split(' ')[1] != null) {
@@ -182,7 +182,7 @@ module.exports.player = function(player, serv) {
   });
 
   player.commands.add({
-    base: 'cpe',//
+    base: 'cpe', //
     info: 'checks if a player has cpe support',
     usage: '/cpe',
     action(params) {
@@ -208,5 +208,5 @@ module.exports.player = function(player, serv) {
         throw err;
       }, 0);
     }
-  }
+  };
 };

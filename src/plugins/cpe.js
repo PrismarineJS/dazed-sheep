@@ -7,4 +7,4 @@ module.exports.player = function(player, serv) {
   player._client.on('ext_entry', function(packet) {
     player.supported_extensions.push(packet);
   });
-}
+};

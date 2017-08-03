@@ -15,7 +15,7 @@ module.exports.server = function(serv, settings) {
     };
     serv.pluginCount++;
     if (serv.externalPluginsLoaded && plugin.server) serv.plugins[name].server.call(p, serv, settings);
-  }
+  };
 
   Object.keys(settings.plugins).forEach(function(p) {
     if (settings.plugins[p].disabled) return;

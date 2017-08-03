@@ -8,7 +8,7 @@ module.exports.player = function(player, serv, settings) {
       serv.destroyBlock(new Vec3(packet.x, packet.y, packet.z));
     }
   });
-}
+};
 
 module.exports.server = function(serv) {
   serv.setBlock = function(coords, block_type) {
@@ -20,7 +20,7 @@ module.exports.server = function(serv) {
       z: coords.z,
       block_type: block_type
     });
-  }
+  };
 
   serv.destroyBlock = function(coords) {
     serv.world.setBlock(new Vec3(coords.x, coords.y, coords.z), 0);
@@ -31,5 +31,5 @@ module.exports.server = function(serv) {
       z: coords.z,
       block_type: 0
     });
-  }
-}
+  };
+};

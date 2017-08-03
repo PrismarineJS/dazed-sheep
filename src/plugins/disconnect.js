@@ -3,5 +3,5 @@ module.exports.player = function(player) {
     player._client.write('disconnect_player', {
       disconnect_reason: reason
     });
-  }
-}
+  };
+};

@@ -42,7 +42,7 @@ class Command {
         if(typeof parse == 'function') {
           pars = parse(pars);
           if(pars === false) {
-            return '&cUsage: ' + com.params.usage
+            return '&cUsage: ' + com.params.usage;
           }
         } else {
           pars = pars.match(parse);

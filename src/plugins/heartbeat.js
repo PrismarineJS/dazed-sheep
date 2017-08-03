@@ -24,9 +24,9 @@ module.exports.server = function(serv, settings) {
       // '&users=' + serv['online_players']);
       // console.log(body);
     });
-  }
-}
+  };
+};
 
 String.prototype.capitalize = function() {
-    return this.charAt(0).toUpperCase() + this.slice(1);
-}
+  return this.charAt(0).toUpperCase() + this.slice(1);
+};

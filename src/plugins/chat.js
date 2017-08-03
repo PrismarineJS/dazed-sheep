@@ -3,7 +3,7 @@ module.exports.player = function(player, serv, settings) {
     if(packet.message.split('')[0] == '/') {
       player.handleCommand(packet.message);
     } else {
-      player.emit('chat', {message:packet.message});
+      player.emit('chat', {message: packet.message});
       serv.broadcast('<' + player.username + '> ' + packet.message);
       serv.log.info('<' + player.username + '> ' + packet.message);
     }
@@ -15,7 +15,7 @@ module.exports.player = function(player, serv, settings) {
       message: message
     });
   };
-}
+};
 
 module.exports.server = function(serv) {
   serv.broadcast = function(message) {
@@ -53,4 +53,4 @@ module.exports.server = function(serv) {
     'yellow': '&e',
     'white': '&f'
   };
-}
+};

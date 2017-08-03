@@ -4,7 +4,7 @@ var World = require('../world');
 var Vec3 = require('vec3');
 
 module.exports.server = function(serv) {
-  serv.world = new World({x: 256, y: 64, z: 256}, "world", serv.db);
+  serv.world = new World({x: 256, y: 64, z: 256}, 'world', serv.db);
 
   serv.world.load(function(err) {
     if(err) {

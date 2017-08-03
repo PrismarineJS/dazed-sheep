@@ -13,11 +13,11 @@ class World {
   }
 
   setBlock(pos, block) {
-    this.data.writeUInt8(block, 4 + pos.x + this.size.z * (pos.z + this.size.x * pos.y))
+    this.data.writeUInt8(block, 4 + pos.x + this.size.z * (pos.z + this.size.x * pos.y));
   }
 
   getBlock(pos, block) {
-    return this.data.readUInt8(4 + pos.x + this.size.z * (pos.z + this.size.x * pos.y))
+    return this.data.readUInt8(4 + pos.x + this.size.z * (pos.z + this.size.x * pos.y));
   }
 
   dump() {

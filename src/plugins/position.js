@@ -19,7 +19,7 @@ module.exports.player = function(player, serv) {
     player.pos.x = x;
     player.pos.y = y;
     player.pos.z = z;
-  }
+  };
 
   player.orientationUpdate = function(yaw, pitch) {
     serv.players.forEach(function(_player) {
@@ -34,7 +34,7 @@ module.exports.player = function(player, serv) {
 
     player.yaw = yaw;
     player.pitch = pitch;
-  }
+  };
 
   player.setPosition = function(x, y, z, yaw, pitch) {
     player._client.write('player_teleport', {
@@ -51,5 +51,5 @@ module.exports.player = function(player, serv) {
     player.pos.z = z;
     player.yaw = yaw;
     player.pitch = pitch;
-  }
+  };
 };
