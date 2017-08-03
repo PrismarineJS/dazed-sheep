@@ -14,11 +14,11 @@ class Command {
 
   find(command) {
     command = command.split('').splice(1).join('');
-    
+
     const parts = command.split(' ');
     const c = parts.shift();
     const pars = parts.join(' ');
-    
+
     if(this.hash[c])
       return [this.hash[c], pars];
 
@@ -26,7 +26,7 @@ class Command {
   }
 
   use(command) {
-    var op = arguments.length <= 1 || arguments[1] === undefined ? true : arguments[1];
+    let op = arguments.length <= 1 || arguments[1] === undefined ? true : arguments[1];
 
     let res = this.find(command);
 
@@ -34,7 +34,7 @@ class Command {
       let com = res[0];
       let pars = res[1];
 
-      if (com.params.op && !op) 
+      if (com.params.op && !op)
         return '&cYou do not have permission to use this command';
 
       const parse = com.params.parse;
@@ -48,10 +48,10 @@ class Command {
           pars = pars.match(parse);
         }
       }
-      
+
       res = com.params.action(pars);
 
-      if(res) 
+      if(res)
         return '' + res;
     } else {
       return '&cUnkown command. Try /help for a list of commands';

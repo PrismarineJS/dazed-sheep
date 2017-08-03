@@ -1,6 +1,6 @@
-var fs = require('fs');
-var zlib = require('zlib');
-var levelup = require('levelup');
+const fs = require('fs');
+const zlib = require('zlib');
+const levelup = require('levelup');
 
 class World {
   constructor(size, name, db) {
@@ -25,9 +25,9 @@ class World {
   }
 
   load(cb) {
-    var scope = this;
+    let scope = this;
     this.db.get('$' + this.name, function(err, value) {
-      if(err) 
+      if(err)
         cb(err);
 
       if(value != null) {

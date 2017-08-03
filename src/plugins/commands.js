@@ -1,4 +1,4 @@
-var version = require('../../package').version;
+const version = require('../../package').version;
 
 module.exports.player = function(player, serv) {
 
@@ -7,27 +7,27 @@ module.exports.player = function(player, serv) {
     info: 'to show all commands',
     usage: '/help [page:command name]',
     parse: function parse(str) {
-      var params = str.split(' ');
-      var page = parseInt(params[params.length - 1]);
+      let params = str.split(' ');
+      let page = parseInt(params[params.length - 1]);
       if (page) {
         params.pop();
       }
-      var search = params.join(' ');
+      let search = params.join(' ');
       return {
         search: search,
         page: page && page - 1 || 0
       };
     },
     action: function action(_ref) {
-      var search = _ref.search;
-      var page = _ref.page;
+      let search = _ref.search;
+      let page = _ref.page;
 
       if (page < 0) return 'Page # must be >= 1';
-      var hash = player.commands.uniqueHash;
+      let hash = player.commands.uniqueHash;
 
-      var PAGE_LENGTH = 7;
+      let PAGE_LENGTH = 7;
 
-      var found = Object.keys(hash).filter(function (h) {
+      let found = Object.keys(hash).filter(function (h) {
         return (h + ' ').indexOf(search && search + ' ' || '') == 0;
       });
 
@@ -36,26 +36,26 @@ module.exports.player = function(player, serv) {
         return serv.color.red + 'Could not find any matches';
       } else if (found.length == 1) {
         // Single command found, giev info on command
-        var cmd = hash[found[0]];
-        var usage = cmd.params && cmd.params.usage || cmd.base;
-        var info = cmd.params && cmd.params.info || 'No info';
+        let cmd = hash[found[0]];
+        let usage = cmd.params && cmd.params.usage || cmd.base;
+        let info = cmd.params && cmd.params.info || 'No info';
         player.chat(usage + ': ' + info);
       } else {
         // Multiple commands found, give list with pages
-        var totalPages = Math.ceil((found.length - 1) / PAGE_LENGTH);
+        let totalPages = Math.ceil((found.length - 1) / PAGE_LENGTH);
         if (page >= totalPages) return serv.color.red + 'The number you have entered is too big, it must be at most ' + totalPages;
         found = found.sort();
         if (found.indexOf('search') != -1) {
-          var baseCmd = hash[search];
+          let baseCmd = hash[search];
           player.chat(baseCmd.base + ' -' + (baseCmd.params && baseCmd.params.info && ' ' + baseCmd.params.info || ''));
         } else {
           player.chat(serv.color.green + '--- Showing help page ' + (page + 1) + ' of ' + totalPages + ' (/help <page>) ---');
         }
-        for (var i = PAGE_LENGTH * page; i < Math.min(PAGE_LENGTH * (page + 1), found.length); i++) {
+        for (let i = PAGE_LENGTH * page; i < Math.min(PAGE_LENGTH * (page + 1), found.length); i++) {
           if (found[i] === search) continue;
-          var cmd = hash[found[i]];
-          var usage = cmd.params && cmd.params.usage || cmd.base;
-          var info = cmd.params && cmd.params.info || 'No info';
+          let cmd = hash[found[i]];
+          let usage = cmd.params && cmd.params.usage || cmd.base;
+          let info = cmd.params && cmd.params.info || 'No info';
           player.chat(usage + ': ' + info);
         }
       }

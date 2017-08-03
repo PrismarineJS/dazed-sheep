@@ -69,7 +69,7 @@ module.exports.player = function(player, serv, settings) {
       serv.log.info(err.stack);
     });
 
-    var addr = player._client.socket.remoteAddress + ':' + player._client.socket.remotePort;
+    let addr = player._client.socket.remoteAddress + ':' + player._client.socket.remotePort;
 
     player.verification_key = player._client.verification_key;
     player.id = serv.entityID;
@@ -102,9 +102,9 @@ module.exports.player = function(player, serv, settings) {
 
     player._client.write('level_initialize', {});
 
-    var compressedMap = zlib.gzipSync(serv.world.dump());
+    let compressedMap = zlib.gzipSync(serv.world.dump());
 
-    for(var i = 0; i < compressedMap.length; i += 1024) {
+    for(let i = 0; i < compressedMap.length; i += 1024) {
       player._client.write('level_data_chunk', {
         chunk_data: compressedMap.slice(i, Math.min(i + 1024, compressedMap.length)),
         percent_complete: i == 0 ? 0 : Math.ceil(i / compressedMap.length * 100)

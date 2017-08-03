@@ -1,4 +1,4 @@
-var Vec3 = require('vec3');
+const Vec3 = require('vec3');
 
 module.exports.player = function(player, serv, settings){
   player.spawn = function() {
