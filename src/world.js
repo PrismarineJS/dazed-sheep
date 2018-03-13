@@ -1,12 +1,22 @@
 const fs = require('fs');
 const zlib = require('zlib');
-const levelup = require('levelup');
+const { promisify } = require('util');
+
+const [
+  readFileAsync,
+  writeFileAsync,
+  gunzipAsync,
+  gzipAsync
+] = [
+  promisify(fs.readFile),
+  promisify(fs.writeFile),
+  promisify(zlib.gunzip),
+  promisify(zlib.gzip)
+];
 
 class World {
-  constructor(size, name, db) {
+  constructor(size) {
     this.size = size;
-    this.name = name.toString();
-    this.db = db;
     this.data = new Buffer(4 + size.x * size.y * size.z);
     this.data.fill(0);
     this.data.writeInt32BE(this.size.x * this.size.y * this.size.z, 0);
@@ -24,30 +34,12 @@ class World {
     return this.data;
   }
 
-  load(cb) {
-    let scope = this;
-    this.db.get('$' + this.name, function(err, value) {
-      if(err)
-        cb(err);
-
-      if(value != null) {
-        value = new Buffer(value);
-        value.copy(scope.data);
-        cb(null);
-      } else {
-        cb(new Error('World not found'));
-      }
-    });
+  async load() {
+    this.data = await gunzipAsync(await readFileAsync('level.dat'));
   }
 
-  save(cb) {
-    this.db.put('$' + this.name, this.dump(), function(err) {
-      if(err) {
-        cb(err);
-      } else {
-        cb(null);
-      }
-    });
+  async save() {
+    await writeFileAsync('level.dat', await gzipAsync(this.data));
   }
 }
 

@@ -4,10 +4,9 @@ const requireIndex = require('requireindex');
 const plugins = requireIndex(path.join(__dirname));
 const version = require('../../package.json').version;
 const Logger = require('js-logger');
-const rndm = require('rndm');
-const md5 = require('js-md5');
+const crypto = require('crypto');
+const MD5 = require('md5.js')
 const zlib = require('zlib');
-const level = require('levelup');
 
 const World = require('../world');
 const Command = require('../command');
@@ -26,13 +25,11 @@ module.exports.server = function(serv, options) {
 
   serv.log.info('Starting dazed-sheep server version 0.30c (' + version + ')');
 
-  serv.salt = rndm.base62(16);
+  serv.salt = crypto.randomBytes(16).toString('hex');
   serv['online_players'] = 0;
-  serv.db = level('./world');
 
   process.on('SIGINT', function() {
-    serv.db.close();
-    setTimeout(function(){
+    setTimeout(function() {
       process.exit(0);
     }, 500);
   });
@@ -123,7 +120,7 @@ module.exports.player = function(player, serv, settings) {
       });
     } else {
       if(settings['online-mode'] == true) {
-        if(md5(serv.salt + player._client.username) == player.verification_key) {
+        if((new MD5().update(serv.salt + player._client.username).digest('hex')) == player.verification_key) {
           player.spawn();
         } else {
           player._client.write('disconnect_player', {

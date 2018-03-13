@@ -132,13 +132,9 @@ module.exports.player = function(player, serv) {
     op: true,
     action() {
       player.chat('Saving...');
-      serv.world.save(function(err) {
-        if(!err) {
-          player.chat('Saved the world');
-        } else {
-          return err;
-        }
-      });
+      serv.world.save()
+        .then(() => player.chat('Saved the world'))
+        .catch(() => player.chat('Failed to save the world'));
     }
   });
 
@@ -177,19 +173,6 @@ module.exports.player = function(player, serv) {
         } else {
           player.disconnect(reason);
         }
-      }
-    }
-  });
-
-  player.commands.add({
-    base: 'cpe', //
-    info: 'checks if a player has cpe support',
-    usage: '/cpe',
-    action(params) {
-      if(player.cpe == true) {
-        return serv.color.green + 'Awesome! You support cpe!';
-      } else {
-        return serv.color.red + 'Aw darn, you don\'t support cpe!';
       }
     }
   });

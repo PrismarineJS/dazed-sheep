@@ -11,14 +11,14 @@ module.exports.player = function(player, serv, settings) {
 };
 
 module.exports.server = function(serv) {
-  serv.setBlock = function(coords, block_type) {
-    serv.world.setBlock(new Vec3(coords.x, coords.y, coords.z), block_type);
+  serv.setBlock = function(coords, blockType) {
+    serv.world.setBlock(new Vec3(coords.x, coords.y, coords.z), blockType);
 
     serv._writeAll('set_block', {
       x: coords.x,
       y: coords.y,
       z: coords.z,
-      block_type: block_type
+      block_type: blockType
     });
   };
 

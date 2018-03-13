@@ -54,7 +54,7 @@ class Command {
       if(res)
         return '' + res;
     } else {
-      return '&cUnkown command. Try /help for a list of commands';
+      return '&cUnknown command. Try /help for a list of commands';
     }
   }
 
