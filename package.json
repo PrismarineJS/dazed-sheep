@@ -33,6 +33,6 @@
   },
   "homepage": "https://github.com/dazed-sheep/dazed-sheep#readme",
   "devDependencies": {
-    "jest": "^20.0.4"
+    "jest": "^26.0.1"
   }
 }
