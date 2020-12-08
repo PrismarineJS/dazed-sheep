@@ -1,4 +1,4 @@
-dazed-sheep [![Build Status](https://img.shields.io/circleci/project/dazed-sheep/dazed-sheep/master.svg)](https://circleci.com/gh/dazed-sheep/dazed-sheep)
+dazed-sheep ![CI](https://github.com/PrismarineJS/dazed-sheep/workflows/CI/badge.svg)
 ===========
 
 A Minecraft Classic server written in JavaScript, includes a featureful JavaScript API, complete with world saving
