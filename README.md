@@ -5,7 +5,7 @@ A Minecraft Classic server written in JavaScript, includes a featureful JavaScri
 
 ## Test server
 
-* 94.23.58.148:25566 using [auto-sheep](https://github.com/rom1504/auto-sheep)
+* 94.23.58.148:25566 using [auto-sheep](https://github.com/PrismarineJS/auto-sheep)
 
 You can use [ClassiCube](https://www.classicube.net/) as a client.
 
