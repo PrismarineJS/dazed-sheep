@@ -6,7 +6,7 @@
   "keywords": [],
   "author": "mhsjlw",
   "scripts": {
-    "test": "$(npm bin)/jest --verbose --runInBand"
+    "test": "jest --verbose --runInBand"
   },
   "contributors": [
     "rom1504 <romain.rom1@gmail.com>"
