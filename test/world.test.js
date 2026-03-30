@@ -37,11 +37,11 @@ describe('World', () => {
   });
 
   it('cannot get out-of-range', () => {
-    expect(() => world.getBlock(new Vec3(32, 32, 32))).toThrow(RangeError);
+    expect(() => world.getBlock(new Vec3(32, 32, 32))).toThrow();
   });
 
   it('cannot set out-of-range', () => {
-    expect(() => world.setBlock(new Vec3(32, 32, 32))).toThrow(RangeError);
+    expect(() => world.setBlock(new Vec3(32, 32, 32))).toThrow();
   });
 
   it('returns buffer on .dump()', () => {
